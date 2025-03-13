@@ -1,0 +1,110 @@
+Java Execution Flow – Step by Step
+When a Java program runs, it follows a specific execution order. Here’s a detailed breakdown of how Java executes a program:
+
+1️⃣ Class Loading
+. The JVM (Java Virtual Machine) loads the class into memory.
+. This happens when the program is started or when a class is first referenced.
+
+2️⃣ Static Block Execution (if any)
+Static blocks (static { }) are executed once when the class is loaded.
+These blocks execute before the main method, in the order they appear in the class.
+
+Example:
+public class Example {
+static {
+System.out.println("Static block executed");
+}
+
+    public static void main(String[] args) {
+        System.out.println("Main method executed");
+    }
+
+}
+OutPut
+Static block executed
+Main method executed
+
+3️⃣ Main Method Execution
+The JVM looks for the main(String[] args) method.
+If no main method is found, the program won’t run!
+The main method is where program execution starts.
+
+4️⃣ Object Creation (if any)
+If objects are created using new, the constructor of that class is executed.
+Instance variables are initialized during object creation.
+
+Example:
+
+public class Example {
+int x = 10;
+
+    Example() {
+        System.out.println("Constructor executed");
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example();  // Object creation
+        System.out.println("Main method executed");
+    }
+
+}
+Output:
+Constructor executed
+Main method executed
+
+5️⃣ Instance Block Execution (if any)
+Instance initializer blocks ({}) execute before the constructor when an object is created.
+Example:
+
+public class Example {
+{
+System.out.println("Instance block executed");
+}
+
+    Example() {
+        System.out.println("Constructor executed");
+    }
+
+    public static void main(String[] args) {
+        new Example();  // Object creation
+    }
+
+}
+Output:
+Instance block executed
+Constructor executed
+
+6️⃣ Method Execution
+Methods are executed in the order they are called.
+A method runs only when it is explicitly invoked.
+
+Example:
+
+public class Example {
+void display() {
+System.out.println("Method executed");
+}
+
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.display(); // Method call
+    }
+
+}
+Output:
+
+Method executed
+
+7️⃣ Garbage Collection (Optional)
+JVM automatically removes unused objects from memory when needed.
+It calls the finalize() method before deleting an object.
+
+🚀 Java Execution Order Summary
+Step Executed When? Runs Before?
+Class Loading When the program starts Everything else
+Static Blocks When class is loaded Main method
+Main Method After static blocks -
+Instance Blocks When an object is created Constructor
+Constructor When an object is created -
+Methods When they are called -
+Garbage Collection Automatically by JVM -
