@@ -1,0 +1,133 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CountDigits",
+      "request": "launch",
+      "mainClass": "CountDigits",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "NumberCheck",
+      "request": "launch",
+      "mainClass": "NumberCheck",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "SwapNumbers",
+      "request": "launch",
+      "mainClass": "SwapNumbers",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testEight",
+      "request": "launch",
+      "mainClass": "testEight",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testEleven",
+      "request": "launch",
+      "mainClass": "testEleven",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testFive",
+      "request": "launch",
+      "mainClass": "testFive",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testFour",
+      "request": "launch",
+      "mainClass": "testFour",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testNine",
+      "request": "launch",
+      "mainClass": "testNine",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testOne",
+      "request": "launch",
+      "mainClass": "testOne",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testSeven",
+      "request": "launch",
+      "mainClass": "testSeven",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testSix",
+      "request": "launch",
+      "mainClass": "testSix",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testTen",
+      "request": "launch",
+      "mainClass": "testTen",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testThirteen",
+      "request": "launch",
+      "mainClass": "testThirteen",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testThree",
+      "request": "launch",
+      "mainClass": "testThree",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testTwelve",
+      "request": "launch",
+      "mainClass": "testTwelve",
+      "projectName": "javaInterviewCode_67f6a840"
+    },
+    {
+      "type": "java",
+      "name": "testTwo",
+      "request": "launch",
+      "mainClass": "testTwo",
+      "projectName": "javaInterviewCode_67f6a840"
+    }
+  ]
+}
