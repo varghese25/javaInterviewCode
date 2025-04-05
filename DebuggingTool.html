@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Debugging Tool</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: grey;
+            color: white;
+            padding: 20px;
+            text-align: -webkit-center;
+        }
+
+        h2 {
+            margin-bottom: 50px;
+            text-align: center;
+
+
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+            background-color: #2e2e2e;
+            color: white;
+            padding: 6px;
+            border-radius: 50px;
+        }
+
+        button {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 50px;
+            background-color: #3a3a3a;
+            color: white;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        pre {
+            background-color: #2b2b2b;
+            padding: 15px;
+            border-radius: 25px;
+            /* Reduced border-radius for better resize handle visibility */
+            max-width: 1000px;
+            overflow-y: auto;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            border: 1px solid #444;
+            resize: both;
+            /* Allows resizing in both horizontal and vertical directions */
+            min-width: 200px;
+            /* Optional: Set a minimum width */
+            min-height: 50px;
+            /* Optional: Set a minimum height */
+        }
+
+        .log-error {
+            color: #ff6b6b;
+        }
+
+        .log-info {
+            color: #8fbcbb;
+        }
+
+        .log-warn {
+            color: #f0ad4e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>
+        🛠️ Java Debugging Tool
+    </h2>
+
+    <div class="section">
+        <strong>Step 1: Upload Error Java File</strong><br>
+        <input type="file" id="errorFile" accept=".java">
+        <button onclick="processErrorFile()">Simulate Compile</button>
+    </div>
+
+    <div class="section">
+        <pre id="logOutput"><em>No logs yet...</em></pre>
+        <button onclick="downloadLog()">Download Error Log</button>
+    </div>
+
+    <div class="section">
+        <strong>Step 2: Upload Fixed Java File</strong><br>
+        <input type="file" id="fixedFile" accept=".java">
+        <button onclick="processFixedFile()">Check Output</button>
+    </div>
+
+    <div class="section">
+        <button onclick="clearAll()">Clear All</button>
+    </div>
+
+    <script>
+        let errorLog = '';
+        let correctOutput = '';
+
+        function processErrorFile() {
+            const file = document.getElementById('errorFile').files[0];
+            if (!file) {
+                alert("Please upload a Java file.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const code = e.target.result;
+                let errors = [];
+                const lines = code.split('\n');
+
+                lines.forEach((line, index) => {
+                    const ln = index + 1;
+                    if (line.includes('System.ot.println')) {
+                        errors.push(`[ERROR] Line ${ln}: Typo in 'System.out.println'. Did you mean 'System.out.println'?`);
+                    }
+                    if (line.includes('class') && !code.includes('public static void main')) {
+                        errors.push(`[WARN] Line ${ln}: Missing 'public static void main' method.`);
+                    }
+                    if (line.includes('if') && !line.includes('{') && !line.trim().endsWith(';')) {
+                        errors.push(`[WARN] Line ${ln}: Possible missing block or semicolon after 'if' statement.`);
+                    }
+                    if ((line.match(/{/g) || []).length !== (line.match(/}/g) || []).length) {
+                        errors.push(`[WARN] Line ${ln}: Unbalanced braces.`);
+                    }
+                    if (line.includes('public class') && !line.includes('{')) {
+                        errors.push(`[ERROR] Line ${ln}: Missing opening brace '{' after class declaration.`);
+                    }
+                    if (line.trim().endsWith('System.out.println("Hello")')) {
+                        errors.push(`[ERROR] Line ${ln}: Missing semicolon ';' after println statement.`);
+                    }
+                });
+
+                if (errors.length === 0) {
+                    errorLog = `[INFO] Code uploaded but no known error pattern detected.`;
+                    showLog(errorLog, 'warn');
+                } else {
+                    errorLog = errors.join('\n');
+                    showLog(errorLog, 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function processFixedFile() {
+            const file = document.getElementById('fixedFile').files[0];
+            if (!file) {
+                alert("Please upload the fixed Java file.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const code = e.target.result;
+                correctOutput = code; // Store the content
+
+                if (code.includes("System.out.println") && code.includes(";") && code.includes("public static void main")) {
+                    showLog(code, 'info'); // Display the current code
+                } else {
+                    showLog(`[WARN] No known fix detected. Output unknown.`, 'warn');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function showLog(text, type) {
+            const logArea = document.getElementById('logOutput');
+            logArea.innerHTML = `<span class="log-${type}">${text}</span>`;
+        }
+
+        function downloadLog() {
+            if (!errorLog) {
+                alert("No error log to download.");
+                return;
+            }
+
+            const blob = new Blob([errorLog], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = "error-log.txt";
+            link.click();
+        }
+
+        function clearAll() {
+            document.getElementById('errorFile').value = '';
+            document.getElementById('fixedFile').value = '';
+            document.getElementById('logOutput').innerHTML = '<em>No logs yet...</em>';
+            errorLog = '';
+        }
+    </script>
+
+</body>
+
+</html>
