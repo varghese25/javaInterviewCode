@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "whileLoop",
+      "request": "launch",
+      "mainClass": "JavaPrac.whileLoop",
+      "projectName": "javaInterviewCode_4a569d0c"
+    },
+    {
+      "type": "java",
       "name": "crack1",
       "request": "launch",
       "mainClass": "crack1",
