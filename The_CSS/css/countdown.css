@@ -1,0 +1,20 @@
+@property --c {
+  syntax: "integer";
+  initial-value: 0;
+  inherits: true;
+}
+
+@keyframes timer {
+  from {
+    --c: 0;
+  }
+  to {
+    --c: 10;
+  }
+}
+
+div::after {
+  animation: timer 5s linear;
+  counter-reset: count var(--c);
+  content: counter(count);
+}
