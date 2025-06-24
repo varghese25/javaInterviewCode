@@ -1,4 +1,4 @@
-## Short Cut Vscode for Java
+w## Short Cut Vscode for Java
 
 - /_ shift+Alt+A_/ Multi line comment
 - // ctrl+/ single line comment
@@ -76,3 +76,5 @@ numbers.stream()<br>
 .forEach(n -> System.out.println("Even: " + n));<br>
 
 ## Github is a platform used for hosting Repos
+
+--Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
