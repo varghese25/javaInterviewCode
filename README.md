@@ -78,3 +78,6 @@ numbers.stream()<br>
 ## Github is a platform used for hosting Repos
 
 --Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
+
+--Callback-> console.log out put will be here which immediately gives the results 
+--CallQueue -> callback function set time will be in queue which will give results when callback function is over later it displays output.
