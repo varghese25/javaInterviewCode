@@ -74,7 +74,17 @@ List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);<br>
 numbers.stream()<br>
 .filter(n -> n % 2 == 0)<br>
 .forEach(n -> System.out.println("Even: " + n));<br>
+<<<<<<< HEAD
 
 ## Github is a platform used for hosting Repos
 
 --Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
+=======
+
+## Github is a platform used for hosting Repos
+
+--Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
+
+--Callback-> console.log out put will be here which immediately gives the results 
+--CallQueue -> callback function set time will be in queue which will give results when callback function is over later it displays output.
+>>>>>>> 3cb89bf74ba4176ea6d5e556802033d0c400cc73
