@@ -1,7 +1,30 @@
-w## Short Cut Vscode for Java
+## Short Cut Vscode for Java
 
 - /_ shift+Alt+A_/ Multi line comment
-- // ctrl+/ single line comment
+- // ctrl+/ single line commentj
+
+## Java Flow
+
+1. JDK – You start here when you write Java code.
+   You type your .java file and compile it with the JDK’s javac tool.
+   Output: .class file (bytecode).
+
+2. JRE – Needed to run that compiled code.
+   The .class file is passed to the JRE.
+   The JRE contains the JVM and standard Java libraries.
+
+3. JVM – Runs your .class file.
+   Reads bytecode and executes it.
+   While executing, JIT may kick in to make it faster.
+
+4. JIT – Works inside JVM during execution.
+   Converts frequently used bytecode into machine code for speed.
+
+5. JAR – Optional packaging step.
+   If you have multiple .class files/resources, you bundle them into a .jar for easier distribution.
+   The JAR is then run by the JRE/JVM.
+
+   Write Code → JDK compiles → .class → (optional JAR) → JRE → JVM runs → JIT optimizes.
 
 ## Java Data Structures
 
@@ -78,108 +101,103 @@ numbers.stream()<br>
 
 ## Github is a platform used for hosting Repos
 
---Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
-=======
+# --Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
 
 ## Github is a platform used for hosting Repos
 
 --Javadoc is a tool within the Java Development Kit (JDK) used to generate API documentation in HTML format from Java source code.
 
---Callback-> console.log out put will be here which immediately gives the results 
+--Callback-> console.log out put will be here which immediately gives the results
 --CallQueue -> callback function set time will be in queue which will give results when callback function is over later it displays output.
->>>>>>> 3cb89bf74ba4176ea6d5e556802033d0c400cc73
 
+> > > > > > > 3cb89bf74ba4176ea6d5e556802033d0c400cc73
 
 ##What is the final variable, final class, and final blank variable?
 --Final Variable: final variables are nothing but constants. We cannot change the value of a final variable once it is initialized.
-class Demo {  
+class Demo {
 
-   final int MAX_VALUE = 99;
-   void myMethod() {  
-      MAX_VALUE = 101;
-   }  
-   public static void main(String args[]) {  
-      Demo obj = new  Demo();  
-      obj.myMethod();  
-   }  
+final int MAX_VALUE = 99;
+void myMethod() {  
+ MAX_VALUE = 101;
+}  
+ public static void main(String args[]) {  
+ Demo obj = new Demo();  
+ obj.myMethod();  
+ }  
 }
 --Output
-Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
-	The final field Demo.MAX_VALUE cannot be assigned
+Exception in thread "main" java.lang.Error: Unresolved compilation problem:
+The final field Demo.MAX_VALUE cannot be assigned
 
-	at beginnersbook.com.Demo.myMethod(Details.java:6)
-	at beginnersbook.com.Demo.main(Details.java:10)
+    at beginnersbook.com.Demo.myMethod(Details.java:6)
+    at beginnersbook.com.Demo.main(Details.java:10)
 
 --Blank final variable: A final variable that is not initialized at the time of declaration is known as blank final variable. We must initialize the blank final variable in constructor of the class otherwise --it will throw a compilation error (Error: variable MAX_VALUE might not have been initialized).
 
 class Demo {  
-   //Blank final variable
-   final int MAX_VALUE;
-	 
-   Demo() {
-      //It must be initialized in constructor
-      MAX_VALUE = 100;
-   }
-   void myMethod() {  
-      System.out.println(MAX_VALUE);
-   }  
-   public static void main(String args[]) {  
-      Demo obj = new  Demo();  
-      obj.myMethod();  
-   }  
+ //Blank final variable
+final int MAX_VALUE;
+Demo() {
+//It must be initialized in constructor
+MAX_VALUE = 100;
+}
+void myMethod() {  
+ System.out.println(MAX_VALUE);
+}  
+ public static void main(String args[]) {  
+ Demo obj = new Demo();  
+ obj.myMethod();  
+ }  
 }
 --Output:100
 
 --Final Method: A final method cannot be overridden. Which means even though a sub class can call the final method of parent class without any issues but it cannot override it.
 class XYZ {  
-   final void demo() {
-      System.out.println("XYZ Class Method");
-   }  
+ final void demo() {
+System.out.println("XYZ Class Method");
 }  
-	     
+}  
+   
 class ABC extends XYZ {  
-   void demo() {
-      System.out.println("ABC Class Method");
-   }  
-	     
-   public static void main(String args[]) {  
-      ABC obj= new ABC();  
-      obj.demo();  
-   }  
+ void demo() {
+System.out.println("ABC Class Method");
+}  
+   
+ public static void main(String args[]) {  
+ ABC obj= new ABC();  
+ obj.demo();  
+ }  
 }
-
-
 
 --Java Polymorphism
 class Animal {
-  public void animalSound() {
-    System.out.println("The animal makes a sound");
-  }
+public void animalSound() {
+System.out.println("The animal makes a sound");
+}
 }
 
 class Pig extends Animal {
-  public void animalSound() {
-    System.out.println("The pig says: wee wee");
-  }
+public void animalSound() {
+System.out.println("The pig says: wee wee");
+}
 }
 
 class Dog extends Animal {
-  public void animalSound() {
-    System.out.println("The dog says: bow wow");
-  }
+public void animalSound() {
+System.out.println("The dog says: bow wow");
+}
 }
 
 class Main {
-  public static void main(String[] args) {
-    Animal myAnimal = new Animal();  // Create a Animal object
-    Animal myPig = new Pig();  // Create a Pig object
-    Animal myDog = new Dog();  // Create a Dog object
-    myAnimal.animalSound();
-    myPig.animalSound();
-    myDog.animalSound();
-  }
+public static void main(String[] args) {
+Animal myAnimal = new Animal(); // Create a Animal object
+Animal myPig = new Pig(); // Create a Pig object
+Animal myDog = new Dog(); // Create a Dog object
+myAnimal.animalSound();
+myPig.animalSound();
+myDog.animalSound();
 }
-
+}
 
 --Java Encapsulation
 
@@ -192,7 +210,6 @@ provide public get and set methods to access and update the value of a private v
 declare class variables/attributes as private
 provide public get and set methods to access and update the value of a private variable
 
-
 Get and Set
 You learned from the previous chapter that private variables can only be accessed within the same class (an outside class has no access to it). However, it is possible to access them if we provide public get and set methods.
 
@@ -200,10 +217,7 @@ The get method returns the variable value, and the set method sets the value.
 
 Syntax for both is that they start with either get or set, followed by the name of the variable, with the first letter in upper case:
 
-
 Instead, we use the getName() and setName() methods to access and update the variable:
-
-
 
 Why Encapsulation?
 Better control of class attributes and methods
@@ -211,79 +225,65 @@ Class attributes can be made read-only (if you only use the get method), or writ
 Flexible: the programmer can change one part of the code without affecting other parts
 Increased security of data
 
-
-
-
 public class Main {
-  public static void main(String[] args) {
-    Person myObj = new Person();
-    myObj.setName("John"); // Set the value of the name variable to "John"
-    System.out.println(myObj.getName());
-  }
+public static void main(String[] args) {
+Person myObj = new Person();
+myObj.setName("John"); // Set the value of the name variable to "John"
+System.out.println(myObj.getName());
+}
 }
 
 // Outputs "John"
 
-
-
 --Abstract Classes and Methods
 Data abstraction is the process of hiding certain details and showing only essential information to the user.
 Abstraction can be achieved with either abstract classes or interfaces.
- 
- The abstract keyword is a non-access modifier, used for classes and methods:
 
- Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+The abstract keyword is a non-access modifier, used for classes and methods:
 
- Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
 
+Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
 
- An abstract class can have both abstract and regular methods:
+An abstract class can have both abstract and regular methods:
 
- abstract class Animal {
-  public abstract void animalSound();
-  public void sleep() {
-    System.out.println("Zzz");
-  }
+abstract class Animal {
+public abstract void animalSound();
+public void sleep() {
+System.out.println("Zzz");
+}
 }
 
 From the example above, it is not possible to create an object of the Animal class:
 
 Animal myObj = new Animal(); // will generate an error
 
-
 To access the abstract class, it must be inherited from another class. Let's convert the Animal class we used in the Polymorphism chapter to an abstract class:
-
 
 Remember from the Inheritance chapter that we use the extends keyword to inherit from a class.
 
-
 // Abstract class
 abstract class Animal {
-  // Abstract method (does not have a body)
-  public abstract void animalSound();
-  // Regular method
-  public void sleep() {
-    System.out.println("Zzz");
-  }
+// Abstract method (does not have a body)
+public abstract void animalSound();
+// Regular method
+public void sleep() {
+System.out.println("Zzz");
 }
-
+}
 
 // Subclass (inherit from Animal)
 class Pig extends Animal {
-  public void animalSound() {
-    // The body of animalSound() is provided here
-    System.out.println("The pig says: wee wee");
-  }
+public void animalSound() {
+// The body of animalSound() is provided here
+System.out.println("The pig says: wee wee");
+}
 }
 
 lass Main {
-  public static void main(String[] args) {
-    Pig myPig = new Pig(); // Create a Pig object
-    myPig.animalSound();
-    myPig.sleep();
-  }
+public static void main(String[] args) {
+Pig myPig = new Pig(); // Create a Pig object
+myPig.animalSound();
+myPig.sleep();
 }
- 
- 
- 
-
+}
