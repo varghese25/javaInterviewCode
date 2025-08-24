@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "prac1",
+      "request": "launch",
+      "mainClass": "prac1",
+      "projectName": "javaInterviewCode_4a569d0c"
+    },
+    {
+      "type": "java",
       "name": "test60",
       "request": "launch",
       "mainClass": "test60",
