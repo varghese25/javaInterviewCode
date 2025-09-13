@@ -1,4 +1,4 @@
-public class Prac2 {
+public class test12 {
     public static void main(String[] args) {
 byte a=30;
 byte b=20;
