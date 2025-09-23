@@ -55,6 +55,4 @@ public class Prac4 {
  * x -> System.out.print(x) (lambda form)
  * 
  * is equivalent to → System.out::print (method reference form)
- */ {
-
-}
+ */
